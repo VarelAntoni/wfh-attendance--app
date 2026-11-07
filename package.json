@@ -1,0 +1,24 @@
+{
+  "name": "wfh-attendance-system-monorepo",
+  "version": "1.0.0",
+  "description": "Fullstack Developer Skill Test: WFH Attendance & Monitoring System (NestJS Microservices + React.js + MySQL)",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "backend:dev": "npm --prefix backend run start:all",
+    "frontend:dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down"
+  },
+  "keywords": [
+    "nestjs",
+    "microservices",
+    "react",
+    "typescript",
+    "mysql",
+    "typeorm",
+    "wfh-attendance"
+  ],
+  "author": "",
+  "license": "ISC"
+}

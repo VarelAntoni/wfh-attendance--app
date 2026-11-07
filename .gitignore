@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+*/node_modules/
+.pnp
+.pnp.js
+
+# Build Outputs
+dist/
+*/dist/
+build/
+*/build/
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+!*/.env.example
+
+# Database files & uploads
+*.sqlite
+*.sqlite-journal
+*.db
+backend/uploads/attendance/*
+!backend/uploads/attendance/.gitkeep
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor & OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+
+# Agent skills cache (internal)
+.agent/
