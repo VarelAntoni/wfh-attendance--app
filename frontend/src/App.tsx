@@ -72,7 +72,7 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      <footer className="border-t border-slate-200/80 bg-white py-4 px-6 text-between text-[11px] font-mono text-slate-400 max-w-7xl mx-auto w-full flex flex-col sm:flex-row items-center justify-between gap-2">
+      <footer className="border-t border-slate-200/80 bg-white py-4 px-4 sm:px-8 lg:px-12 text-[11px] font-mono text-slate-400 w-full flex flex-col sm:flex-row items-center justify-between gap-2">
         <span>Workforce Presence Instrument • Fullstack Developer Skill Test</span>
         <span className="text-slate-300">NestJS Microservices • MySQL • React</span>
       </footer>
