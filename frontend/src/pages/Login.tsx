@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LogIn, Lock, Mail, ShieldAlert, KeyRound, Compass, CheckCircle } from 'lucide-react';
+import { LogIn, Lock, Mail, ShieldAlert, Compass } from 'lucide-react';
 import { api } from '../api/client';
 import { User } from '../types';
 
@@ -30,17 +30,6 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const fillDemo = (role: 'HRD' | 'KARYAWAN') => {
-    if (role === 'HRD') {
-      setEmail('admin@company.com');
-      setPassword('admin123');
-    } else {
-      setEmail('karyawan@company.com');
-      setPassword('karyawan123');
-    }
-    setError(null);
   };
 
   return (
@@ -121,41 +110,6 @@ export const Login: React.FC<LoginProps> = ({ onLoginSuccess }) => {
               )}
             </button>
           </form>
-
-          {/* Precision Demo Credentials Panel */}
-          <div className="mt-5 pt-4 border-t border-slate-100">
-            <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-2">
-              <KeyRound className="w-3 h-3 text-slate-400" />
-              <span>Akses Cepat Pengujian</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              <button
-                type="button"
-                onClick={() => fillDemo('HRD')}
-                className="p-2.5 text-left rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors group"
-              >
-                <div className="text-xs font-semibold text-slate-900 flex items-center gap-1">
-                  <span>Admin HRD</span>
-                </div>
-                <div className="text-[11px] font-mono text-slate-400 truncate">
-                  admin@company.com
-                </div>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => fillDemo('KARYAWAN')}
-                className="p-2.5 text-left rounded-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-colors group"
-              >
-                <div className="text-xs font-semibold text-slate-900 flex items-center gap-1">
-                  <span>Karyawan WFH</span>
-                </div>
-                <div className="text-[11px] font-mono text-slate-400 truncate">
-                  karyawan@company.com
-                </div>
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Technical Stack Signature */}

@@ -70,8 +70,6 @@ Sistem telah dilengkapi fitur **auto-seeding** pada saat backend pertama kali di
    - NIP: `EMP-001`
    - Role: `KARYAWAN`
 
-*(Tersedia tombol **Akses Cepat Demo** di halaman login untuk mengisi email & password secara otomatis)*.
-
 ---
 
 ## 🚀 Panduan Menjalankan Aplikasi
