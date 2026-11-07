@@ -8,7 +8,9 @@ import { GatewayModule } from './gateway.module';
 dotenv.config();
 
 async function bootstrap() {
-  const app = await NestFactory.create(GatewayModule);
+  const app = await NestFactory.create(GatewayModule, {
+    bodyParser: false,
+  });
 
   // Enable CORS for frontend client
   app.enableCors({
@@ -16,6 +18,10 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
+
+  // Allow high-resolution photo uploads & base64 snapshots (up to 25MB)
+  app.use(express.json({ limit: '25mb' }));
+  app.use(express.urlencoded({ limit: '25mb', extended: true }));
 
   // Global validation pipe
   app.useGlobalPipes(

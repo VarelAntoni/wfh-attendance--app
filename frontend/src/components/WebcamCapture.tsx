@@ -90,9 +90,18 @@ export const WebcamCapture: React.FC<WebcamCaptureProps> = ({ onPhotoCaptured })
     ctx.font = '400 12px "Courier New", monospace';
     ctx.fillText(isoString, canvas.width - 240, canvas.height - 18);
 
-    const base64Image = canvas.toDataURL('image/jpeg', 0.88);
+    const base64Image = canvas.toDataURL('image/jpeg', 0.85);
     setCapturedPhoto(base64Image);
-    onPhotoCaptured({ base64: base64Image });
+
+    // Convert canvas to File blob for multipart transmission
+    canvas.toBlob((blob) => {
+      if (blob) {
+        const file = new File([blob], `wfh-snapshot-${Date.now()}.jpg`, { type: 'image/jpeg' });
+        onPhotoCaptured({ file, base64: base64Image });
+      } else {
+        onPhotoCaptured({ base64: base64Image });
+      }
+    }, 'image/jpeg', 0.85);
 
     if (stream) {
       stream.getTracks().forEach((track) => track.stop());
